@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-big{
+    width: 800px;
+    height: 500px;
+    background-size: cover; 
+    background-position: center;
+    display: none;
+}
+.active{
+    width: 800px;
+    height: 500px;
+    background-size: cover; 
+    background-position: center;
+    display: block;
+}
+.image-slider{
+    width: 200px;
+    height: 500px;
+}
+.img-slider{
+    height: 100px;
+    width: 200px;
+    display: block;
+}

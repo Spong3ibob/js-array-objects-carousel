@@ -30,7 +30,7 @@ for (let i = 0; i < images.length; i++){
         item.classList.add("active");
     }
     const img = document.createElement("img");
-    img.setAttribute("src", images[i]);
+    img.setAttribute("src", images[i].image);
     item.append(img);
     itemsRef.append(item);
 }

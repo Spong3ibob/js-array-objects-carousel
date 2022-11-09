@@ -13,8 +13,6 @@
 .image-big{
     width: 800px;
     height: 500px;
-    background-size: cover; 
-    background-position: center;
     display: none;
 }
 .active{

@@ -24,23 +24,23 @@ const images = [
 
 const itemsRef = document.querySelector(".container");
 for (let i = 0; i < images.length; i++){
-    const item = document.createElement("div");
+    const item = document.createElement("img");
     item.classList.add("image-big");
+   
     if(i === 0){
         item.classList.add("active");
     }
-    const img = document.createElement("img");
-    img.setAttribute("src", images[i].image);
-    item.append(img);
+    item.setAttribute("src", images[i].image);
     itemsRef.append(item);
+    itemsRef.append(slider);
 }
 
-// const nextBtn = document.querySelector(".next");
-// nextBtn.addEventListener("click", function(){
-//     const itemActive = document.querySelector(".item.active");
-//     const nextItem = itemActive.nextElementSibling;
-//     itemActive.classList.remove("active");
-//     if( nextItem !== null ){
-//         nextItem.classList.add("active");
-//     }
-// });
+const nextBtn = document.querySelector(".next");
+nextBtn.addEventListener("click", function(){
+    const itemActive = document.querySelector(".item.active");
+    const nextItem = itemActive.nextElementSibling;
+    itemActive.classList.remove("active");
+    if( nextItem !== null ){
+        nextItem.classList.add("active");
+    }
+});

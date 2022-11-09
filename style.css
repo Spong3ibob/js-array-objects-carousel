@@ -18,8 +18,6 @@
 .active{
     width: 800px;
     height: 500px;
-    background-size: cover; 
-    background-position: center;
     display: block;
 }
 .image-slider{
@@ -30,4 +28,16 @@
     height: 100px;
     width: 200px;
     display: block;
+}
+.prev{
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    z-index: 999;
+}
+.next{
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    z-index: 999;
 }

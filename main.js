@@ -22,25 +22,28 @@ const images = [
     }
 ];
 
-const itemsRef = document.querySelector(".container");
-for (let i = 0; i < images.length; i++){
-    const item = document.createElement("img");
-    item.classList.add("image-big");
-   
-    if(i === 0){
-        item.classList.add("active");
-    }
-    item.setAttribute("src", images[i].image);
-    itemsRef.append(item);
-    itemsRef.append(slider);
-}
+let currentImageIndex = 0;
+const currentImageContainer = document.querySelector(".current-image")
 
-const nextBtn = document.querySelector(".next");
-nextBtn.addEventListener("click", function(){
-    const itemActive = document.querySelector(".item.active");
-    const nextItem = itemActive.nextElementSibling;
-    itemActive.classList.remove("active");
-    if( nextItem !== null ){
-        nextItem.classList.add("active");
+const templateCurrentImage = document.getElementById(".current-image").contentEditable.cloneNode(true)
+templateCurrentImage.querySelector("img").src = images[currentImageIndex].image
+templateCurrentImage.querySelector("img").alt = images[currentImageIndex].title
+templateCurrentImage.querySelector(".current-image-text h3").innerHTML = images[currentImageIndex].title
+templateCurrentImage.querySelector(".current-image-text p").innerHTML = images[currentImageIndex].text
+
+currentImageContainer.append(templateCurrentImage)
+
+const btnNextSlide = document.querySelector(".next-slide")
+
+btnNextSlide.addEventListener("click", function(){
+    currentImageIndex++
+    if(currentImageIndex > 0){
+        currentImageIndex--
+    }else{
+        currentImageIndex = images.length -1
     }
-});
+    currentImageContainer.querySelector("img").src = images[currentImageIndex].image
+    currentImageContainer.querySelector("img").alt = images[currentImageIndex].title
+    currentImageContainer.querySelector(".current-image-text h3").innerHTML = images[currentImageIndex].title
+    currentImageContainer.querySelector(".current-image-text p").innerHTML = images[currentImageIndex].text
+})
